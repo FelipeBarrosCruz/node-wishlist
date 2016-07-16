@@ -1,0 +1,39 @@
+{
+  "name": "node-wishlist",
+  "version": "1.0.0",
+  "description": "Node Wishlist",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FelipeBarrosCruz/node-wishlist.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "wishlist",
+    "postgres"
+  ],
+  "author": "FelipeBarrosCruz <felipe.barros.pt@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FelipeBarrosCruz/node-wishlist/issues"
+  },
+  "homepage": "https://github.com/FelipeBarrosCruz/node-wishlist#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "express-jwt": "^3.4.0",
+    "helmet": "^2.1.1",
+    "jsonwebtoken": "^7.1.6",
+    "moment": "^2.14.1",
+    "moment-timezone": "^0.5.4",
+    "morgan": "^1.7.0"
+  }
+}
