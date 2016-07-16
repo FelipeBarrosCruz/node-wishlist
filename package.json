@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "Node Wishlist",
   "main": "index.js",
+  "engines": {
+    "node": ">=5.0.0"
+  },
   "scripts": {
-    "test": "mocha --reporter spec"
+    "test": "./node_modules/.bin/mocha --reporter spec",
+    "development": "./node_modules/.bin/pm2-dev index.js"
   },
   "repository": {
     "type": "git",
@@ -24,10 +28,12 @@
   "homepage": "https://github.com/FelipeBarrosCruz/node-wishlist#readme",
   "devDependencies": {
     "chai": "^3.5.0",
-    "mocha": "^2.5.3"
+    "mocha": "^2.5.3",
+    "pm2": "^1.1.3"
   },
   "dependencies": {
     "body-parser": "^1.15.2",
+    "cors": "^2.7.1",
     "express": "^4.14.0",
     "express-jwt": "^3.4.0",
     "helmet": "^2.1.1",
