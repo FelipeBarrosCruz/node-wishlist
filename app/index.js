@@ -5,6 +5,7 @@ function requireComponent(component) {
 };
 
 const COMPONENTS = [
+    'auth',
     'users',
     'wishlist'
 ];
