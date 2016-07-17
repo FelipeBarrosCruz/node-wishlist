@@ -28,7 +28,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 201 Created\n{\n     \"status\": true,\n     \"data\": {\n         \"id\": 1,\n         \"name\":  \"Felipe Barros\",\n         \"email\": \"felipe.barros.pt@gmail.com\"\n     },\n     \"token\": \"JsonWebToken\"\n}",
+          "content": "HTTP/1.1 201 Created\n{\n     \"status\": true,\n     \"data\": {\n         \"id\": 1,\n         \"name\":  \"Felipe Barros\",\n         \"email\": \"felipe.barros.pt@gmail.com\"\n     },\n     \"token\": \"JsonWebToken\",\n     \"message\": \"MESSAGE_USER_CREATE_SUCCESS\"\n}",
           "type": "json"
         }
       ]
