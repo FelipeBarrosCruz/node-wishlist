@@ -10,7 +10,13 @@
  *     {
  *       "name":     "Felipe Barros"
  *       "email":    "felipe.barros.pt@gmail.com",
- *       "password": "foobar"
+ *       "password": "foobar",
+ *       "address": "{
+ *          'number': 1,
+ *          'country': 'BR',
+ *          'state': 'PI',
+ *          'city': 'Teresina'
+ *       }"
  *     }
  *
  * @apiErrorExample {json} Error-Response:

@@ -14,7 +14,13 @@ function UnitTest(Repository) {
                 },
                 update: {
                     name: 'Felipe Barros Cruz',
-                    password: 'barfoo'
+                    password: 'barfoo',
+                    address:  {
+                        number: 2,
+                        country: 'BR',
+                        state: 'SP',
+                        city: 'São Paulo'
+                    }
                 }
             };
         });

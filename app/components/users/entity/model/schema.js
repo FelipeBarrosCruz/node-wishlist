@@ -27,6 +27,10 @@ function Schema(Application, Repository) {
             password: {
                 type: 'string',
                 required: true
+            },
+            address: {
+                type: 'json',
+                required: true
             }
         }
     });
