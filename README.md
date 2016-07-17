@@ -19,7 +19,7 @@
 ### To start the application
     npm run start
 
-## On this project e use:
+## On this project we use:
 
 - Express Packages
 - Waterline Packages
