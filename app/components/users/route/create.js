@@ -29,7 +29,8 @@
  *              "name":  "Felipe Barros",
  *              "email": "felipe.barros.pt@gmail.com"
  *          },
- *          "token": "JsonWebToken"
+ *          "token": "JsonWebToken",
+ *          "message": "MESSAGE_USER_CREATE_SUCCESS"
  *     }
  */
 
@@ -37,7 +38,8 @@ let Route = (Repository) => {
 
 
     return (req, res, next) => {
-        let UserEntity = Repository.get('app.entity.users');
+        let UserEntity = Repository.get('app.entity.users'),
+            JwtSign     = Repository.get('security.jwtSign');
 
         let Data = {
             name:       req.body.name,
@@ -59,7 +61,9 @@ let Route = (Repository) => {
             return res.status(201).json({
                 status: status,
                 data:   result,
-                token:  'oie',
+                token:  JwtSign({
+                    id: user.id
+                }),
                 message: 'MESSAGE_USER_CREATE_SUCCESS'
             });
         });
