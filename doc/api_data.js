@@ -10,7 +10,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "Body\n{\n  \"name\":     \"Felipe Barros\"\n  \"email\":    \"felipe.barros.pt@gmail.com\",\n  \"password\": \"foobar\"\n}",
+          "content": "Body\n{\n  \"name\":     \"Felipe Barros\"\n  \"email\":    \"felipe.barros.pt@gmail.com\",\n  \"password\": \"foobar\",\n  \"address\": {\n     \"number\": 1,\n     \"country\": \"BR\",\n     \"state\": \"PI\",\n     \"city\": \"Teresina\"\n  }\n}",
           "type": "json"
         }
       ]
@@ -28,7 +28,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 201 Created\n{\n     \"status\": true,\n     \"data\": {\n         \"id\": 1,\n         \"name\":  \"Felipe Barros\",\n         \"email\": \"felipe.barros.pt@gmail.com\"\n     },\n     \"token\": \"JsonWebToken\",\n     \"message\": \"MESSAGE_USER_CREATE_SUCCESS\"\n}",
+          "content": "HTTP/1.1 201 Created\n{\n     \"status\": true,\n     \"data\": {\n         \"id\": 1,\n         \"name\":  \"Felipe Barros\",\n         \"email\": \"felipe.barros.pt@gmail.com\"\n         \"address\": {\n             \"number\": 1,\n             \"country\": \"BR\",\n             \"state\": \"PI\",\n             \"city\": \"Teresina\"\n         }\n     },\n     \"token\": \"JsonWebToken\",\n     \"message\": \"MESSAGE_USER_CREATE_SUCCESS\"\n}",
           "type": "json"
         }
       ]
@@ -86,7 +86,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 202 OK\n{\n     \"status\": true,\n     \"data\": {\n         \"id\": 1,\n         \"name\":  \"Felipe Barros\",\n         \"email\": \"felipe.barros.pt@gmail.com\"\n     },\n}",
+          "content": "HTTP/1.1 202 OK\n{\n     \"status\": true,\n     \"data\": {\n         \"id\": 1,\n         \"name\":  \"Felipe Barros\",\n         \"email\": \"felipe.barros.pt@gmail.com\",\n         \"address\": {\n             \"number\": 1,\n             \"country\": \"BR\",\n             \"state\": \"PI\",\n             \"city\": \"Teresina\"\n         }\n     }\n}",
           "type": "json"
         }
       ]
@@ -106,7 +106,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "Body\n{\n  \"name\":     \"Felipe Barros\",\n  \"password\": \"foobar\"\n}",
+          "content": "Body\n{\n  \"name\":     \"Felipe Barros\",\n  \"password\": \"foobar\",\n  \"address\": {\n     \"number\": 2,\n     \"country\": \"BR\",\n     \"state\": \"SP\",\n     \"city\": \"São Paulo\"\n  }\n}",
           "type": "json"
         }
       ]
@@ -124,7 +124,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 201 Created\n{\n     \"status\": true,\n     \"data\": {\n         \"id\": 1,\n         \"name\":  \"Felipe Barros\",\n         \"email\": \"felipe.barros.pt@gmail.com\"\n     },\n     \"message\": \"MESSAGE_USER_UPDATE_SUCCESS\"\n}",
+          "content": "HTTP/1.1 201 Created\n{\n     \"status\": true,\n     \"data\": {\n         \"id\": 1,\n         \"name\":  \"Felipe Barros\",\n         \"email\": \"felipe.barros.pt@gmail.com\",\n         \"address\": {\n             \"number\": 2,\n             \"country\": \"BR\",\n             \"state\": \"SP\",\n             \"city\": \"São Paulo\"\n         }\n     },\n     \"message\": \"MESSAGE_USER_UPDATE_SUCCESS\"\n}",
           "type": "json"
         }
       ]
