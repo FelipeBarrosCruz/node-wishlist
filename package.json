@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "./node_modules/.bin/mocha tests --timeout 60000 --reporter spec",
-    "development": "./node_modules/.bin/pm2-dev index.js"
+    "development": "./node_modules/.bin/pm2-dev index.js",
+    "documentation": "./node_modules/.bin/apidoc -i ./app"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
   },
   "homepage": "https://github.com/FelipeBarrosCruz/node-wishlist#readme",
   "devDependencies": {
+    "apidoc": "^0.16.1",
     "chai": "^3.5.0",
     "mocha": "^2.5.3",
     "pm2": "^1.1.3"
