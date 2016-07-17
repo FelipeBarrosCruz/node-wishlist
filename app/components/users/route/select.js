@@ -1,4 +1,28 @@
 'use strict';
+/**
+ * @api {get} /users SELECT
+ * @apiDescription Select an user
+ * @apiName SELECT
+ * @apiGroup Users
+ *
+ * @apiErrorExample {json} Error-Response:
+ *     HTTP/1.1 400 Bad Request
+ *     {
+ *       "status": false,
+ *       "message": "MESSAGE_USER_NOT_FOUND"
+ *     }
+ *
+ * @apiSuccessExample {json} Success-Response:
+ *     HTTP/1.1 202 OK
+ *     {
+ *          "status": true,
+ *          "data": {
+ *              "id": 1,
+ *              "name":  "Felipe Barros",
+ *              "email": "felipe.barros.pt@gmail.com"
+ *          },
+ *     }
+ */
 
 let Route = (Repository) => {
 
@@ -19,9 +43,12 @@ let Route = (Repository) => {
                 });
             }
 
-            return res.json({
+            let User = result.length && result[0];
+            delete User.password;
+
+            return res.status(200).json({
                 status: status,
-                data: result[0]
+                data:   User
             });
         });
     };

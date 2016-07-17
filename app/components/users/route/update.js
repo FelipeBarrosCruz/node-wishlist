@@ -1,4 +1,36 @@
 'use strict';
+/**
+ * @api {update} /users UPDATE
+ * @apiDescription Update an user
+ * @apiName UPDATE
+ * @apiGroup Users
+ *
+ * @apiParamExample {json} Request-Example:
+ *     Body
+ *     {
+ *       "name":     "Felipe Barros",
+ *       "password": "foobar"
+ *     }
+ *
+ * @apiErrorExample {json} Error-Response:
+ *     HTTP/1.1 400 Bad Request
+ *     {
+ *       "status": false,
+ *       "message": "MESSAGE_USER_UPDATE_ERROR"
+ *     }
+ *
+ * @apiSuccessExample {json} Success-Response:
+ *     HTTP/1.1 201 Created
+ *     {
+ *          "status": true,
+ *          "data": {
+ *              "id": 1,
+ *              "name":  "Felipe Barros",
+ *              "email": "felipe.barros.pt@gmail.com"
+ *          },
+ *          "message": "MESSAGE_USER_UPDATE_SUCCESS"
+ *     }
+ */
 
 let Route = (Repository) => {
 
