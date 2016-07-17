@@ -40,7 +40,7 @@ function UnitTest(Repository) {
         });
 
         it('Should delete user', function (done) {
-           this.userEntity.src.delete(this.deleteData, (err, status, result) => {
+           this.userEntity.src.delete(this.deleteData, (err, status) => {
                 (err === null).should.equal(true);
                 status.should.equal(true);;
                 return done(err);
