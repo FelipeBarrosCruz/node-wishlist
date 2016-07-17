@@ -19,8 +19,14 @@
  *          "data": {
  *              "id": 1,
  *              "name":  "Felipe Barros",
- *              "email": "felipe.barros.pt@gmail.com"
- *          },
+ *              "email": "felipe.barros.pt@gmail.com",
+ *              "address": {
+ *                  "number": 1,
+ *                  "country": "BR",
+ *                  "state": "PI",
+ *                  "city": "Teresina"
+ *              }
+ *          }
  *     }
  */
 

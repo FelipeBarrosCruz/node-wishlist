@@ -9,7 +9,13 @@
  *     Body
  *     {
  *       "name":     "Felipe Barros",
- *       "password": "foobar"
+ *       "password": "foobar",
+ *       "address": {
+ *          "number": 2,
+ *          "country": "BR",
+ *          "state": "SP",
+ *          "city": "São Paulo"
+ *       }
  *     }
  *
  * @apiErrorExample {json} Error-Response:
@@ -27,12 +33,12 @@
  *              "id": 1,
  *              "name":  "Felipe Barros",
  *              "email": "felipe.barros.pt@gmail.com",
- *              "address": "{
- *                  'number': 1,
- *                  'country': 'BR',
- *                  'state': 'PI',
- *                  'city': 'Teresina'
- *              }"
+ *              "address": {
+ *                  "number": 2,
+ *                  "country": "BR",
+ *                  "state": "SP",
+ *                  "city": "São Paulo"
+ *              }
  *          },
  *          "message": "MESSAGE_USER_UPDATE_SUCCESS"
  *     }

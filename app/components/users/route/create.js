@@ -11,12 +11,12 @@
  *       "name":     "Felipe Barros"
  *       "email":    "felipe.barros.pt@gmail.com",
  *       "password": "foobar",
- *       "address": "{
- *          'number': 1,
- *          'country': 'BR',
- *          'state': 'PI',
- *          'city': 'Teresina'
- *       }"
+ *       "address": {
+ *          "number": 1,
+ *          "country": "BR",
+ *          "state": "PI",
+ *          "city": "Teresina"
+ *       }
  *     }
  *
  * @apiErrorExample {json} Error-Response:
@@ -34,6 +34,12 @@
  *              "id": 1,
  *              "name":  "Felipe Barros",
  *              "email": "felipe.barros.pt@gmail.com"
+ *              "address": {
+ *                  "number": 1,
+ *                  "country": "BR",
+ *                  "state": "PI",
+ *                  "city": "Teresina"
+ *              }
  *          },
  *          "token": "JsonWebToken",
  *          "message": "MESSAGE_USER_CREATE_SUCCESS"
