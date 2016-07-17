@@ -15,7 +15,7 @@ var should = require('chai').should();
 
 describe('Set up the application', function () {
 
-    beforeEach(function (done) {
+    before(function (done) {
         Application.onReady((Server, Repository) => {
             this.repository = Repository;
             return done(null);
@@ -26,6 +26,17 @@ describe('Set up the application', function () {
         it('Running Auth tests', function () {
             try {
                 return loaderTestComponent('auth', this.repository);
+            } catch(err) {
+                (err === null).should.equal(true);
+            }
+        });
+    });
+
+
+    describe('Set up tests of Users component', function () {
+        it('Running users tests', function () {
+            try {
+                return loaderTestComponent('users', this.repository);
             } catch(err) {
                 (err === null).should.equal(true);
             }

@@ -13,6 +13,8 @@ function Entity(Application, Repository) {
         src: {
             authorize:  requireSrc('authorize', Model),
             create:     requireSrc('create', Model),
+            select:     requireSrc('select', Model),
+            update:     requireSrc('update', Model),
             delete:     requireSrc('delete', Model)
         }
     };

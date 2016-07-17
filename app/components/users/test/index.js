@@ -6,7 +6,12 @@ function Test(Repository) {
         return require(`./src/${name}`)(Repository)
     }
 
-    return {};
+    return {
+        create: loadUnitTest('create'),
+        update: loadUnitTest('update'),
+        select: loadUnitTest('select'),
+        delete: loadUnitTest('delete')
+    };
 }
 
 module.exports = Test;
