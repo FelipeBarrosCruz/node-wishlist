@@ -17,7 +17,7 @@ let Route = (Repository) => {
             if (err || !status || !result.length) {
                 return res.status(401).json({
                     status: false,
-                    message: 'MESSAGE_USERX_UNAUTHORIZED'
+                    message: 'MESSAGE_USER_UNAUTHORIZED'
                 });
             }
 
@@ -26,7 +26,9 @@ let Route = (Repository) => {
             return res.status(200).json({
                 status: status,
                 data:   user,
-                token:  JwtSign(user)
+                token:  JwtSign({
+                    id: user.id
+                })
             });
         });
     };
