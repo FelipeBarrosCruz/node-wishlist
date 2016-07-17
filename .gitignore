@@ -1,7 +1,5 @@
 # Logs
 
-env/devlopment.js
-
 logs
 *.log
 npm-debug.log*
