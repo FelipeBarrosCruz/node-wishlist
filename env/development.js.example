@@ -11,10 +11,10 @@ module.exports = {
         unless: []
     },
     db: {
-        host: 'node-wishlist.cwer2upqmp5c.us-west-2.rds.amazonaws.com',
-        user: 'whishlist',
+        host: 'localhost',
+        user: 'root',
         port: 5432,
-        password: '1q2w3e4r5t',
-        database: 'whishlist'
+        password: 'root',
+        database: 'database'
     }
 };
