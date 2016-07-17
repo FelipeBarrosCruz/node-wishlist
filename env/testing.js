@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-    env: 'development',
+    env: 'testing',
     application: {
         port: 3000,
         dir: __dirname.concat('/../app')
