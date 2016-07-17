@@ -1,18 +1,31 @@
 'use strict';
 
-function Module(configuration) {
+function getRouter(Application, Repository) {
     let Router = require('express').Router();
 
     function requireRoute(route) {
-        return require(`./route/${route}`)
+        return [
+            require(`./route/${route}`)(Repository)
+        ];
     }
 
     Router.post(
         '/',
-        requireRoute('authorization')
+        requireRoute('authorize')
     );
 
     return Router;
 };
 
-module.exports = Module;
+function getEntity(Application, Repository) {
+    return null;
+}
+
+function Component(Application, Repository) {
+    return {
+        router: getRouter(Application, Repository),
+        entity: getEntity(Application, Repository)
+    };
+};
+
+module.exports = Component;
