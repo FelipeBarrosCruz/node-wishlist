@@ -1,13 +1,15 @@
 'use strict';
 
-function Module(configuration) {
+function getRouter(Application, Repository) {
     let Router = require('express').Router();
 
-    function requireRoute(route) {
-        return [
-            configuration.jwt,
-            require(`./route/${route}`)
+    function requireRoute(route, security) {
+        let Route = [
+            require(`./route/${route}`)(Repository)
         ];
+        return (security === false)
+                ? Route
+                : [Repository.get('security.jwtConfiguration')].concat(Route);
     }
 
     Router.get(
@@ -17,7 +19,7 @@ function Module(configuration) {
 
     Router.post(
         '/',
-        requireRoute('create')
+        requireRoute('create', false)
     );
 
     Router.put(
@@ -33,4 +35,15 @@ function Module(configuration) {
     return Router;
 };
 
-module.exports = Module;
+function getEntity(Application, Repository) {
+    return require('./entity')(Application, Repository);
+}
+
+function Component(Application, Repository) {
+    return {
+        router: getRouter(Application, Repository),
+        entity: getEntity(Application, Repository)
+    };
+};
+
+module.exports = Component;

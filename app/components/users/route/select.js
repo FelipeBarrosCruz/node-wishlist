@@ -1,5 +1,10 @@
 'use strict';
 
-module.exports = (req, res, next) => {
+let Route = (Repository) => {
 
+    return (req, res, next) => {
+
+    };
 };
+
+module.exports = Route;
