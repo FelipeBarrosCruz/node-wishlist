@@ -9,6 +9,7 @@ function ApplicationServer(configuration) {
         Morgan                = require('morgan'),
         Helmet                = require('helmet'),
         Async                 = require('async'),
+        JwtAuth               = require('jsonwebtoken'),
         Waterline             = require('waterline'),
         WaterlinePostgres     = require('sails-postgresql'),
         ApplicationLoader     = require('./ApplicationLoader'),
@@ -70,11 +71,16 @@ function ApplicationServer(configuration) {
             return req.headers.bearer || null;
         }
     }).unless(configuration.jwt.unless);
+    ApplicationRepository.set('security.jwtConfiguration', JwtConfiguration);
 
     /*
-     * @Description: Set on repository jwt configuration
+     * @Description: Set JwtSign function to generate token
+     * @Reference: https://github.com/auth0/node-jsonwebtoken
     */
-    ApplicationRepository.set('security.jwtConfiguration', JwtConfiguration);
+    let JwtSign = (user) => {
+        return JwtAuth.sign(user, configuration.jwt.secret);
+    }
+    ApplicationRepository.set('security.jwtSign', JwtSign);
 
     /*
      * @Description: Generate errors midlewares;

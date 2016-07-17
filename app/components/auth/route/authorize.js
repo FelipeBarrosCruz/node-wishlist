@@ -3,7 +3,8 @@
 let Route = (Repository) => {
 
     return (req, res, next) => {
-        let UserEntity = Repository.get('app.entity.users');
+        let UserEntity  = Repository.get('app.entity.users'),
+            JwtSign     = Repository.get('security.jwtSign');
 
         let Data = {
             where: {
@@ -20,10 +21,12 @@ let Route = (Repository) => {
                 });
             }
 
+            let user = result.length && result[0];
+
             return res.status(200).json({
                 status: status,
-                data:   result[0],
-                token:  'oie'
+                data:   user,
+                token:  JwtSign(user)
             });
         });
     };
