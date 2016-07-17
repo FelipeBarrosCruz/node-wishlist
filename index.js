@@ -2,11 +2,13 @@
 
 const ENV = process.env.NODE_ENV || 'development';
 
-let Application = require('./src/ApplicationServer');
+let Configuration     = require(`./env/${ENV}`);
+let Colors            = require('colors');
+let ApplicationServer = require('./src/ApplicationServer');
+let Application       = ApplicationServer(Configuration);
 
-Application(require(`./env/${ENV}`)).onReady((Server, APP_PORT) => {
-    Server.listen(APP_PORT, () => {
-        console.log(`Application Server start`);
-        console.log(`Application run on ${APP_PORT}`);
-    });
+Application.onReady((Server, Repository) => {
+    return console.log('....... DONE .......');
 });
+
+module.exports = Application;
