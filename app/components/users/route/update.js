@@ -10,11 +10,7 @@
  *     {
  *       "name":     "Felipe Barros",
  *       "password": "foobar",
- *       "address": {
- *          "number": 2,
- *          "country": "BR",
- *          "state": "SP",
- *          "city": "São Paulo"
+ *       "address":  01311300
  *       }
  *     }
  *
@@ -26,7 +22,7 @@
  *     }
  *
  * @apiSuccessExample {json} Success-Response:
- *     HTTP/1.1 201 Created
+ *     HTTP/1.1 200 OK
  *     {
  *          "status": true,
  *          "data": {
@@ -34,10 +30,12 @@
  *              "name":  "Felipe Barros",
  *              "email": "felipe.barros.pt@gmail.com",
  *              "address": {
- *                  "number": 2,
- *                  "country": "BR",
- *                  "state": "SP",
- *                  "city": "São Paulo"
+ *                  "cep": "01311300",
+ *                  "tipoDeLogradouro": "Avenida",
+ *                  "logradouro": "Paulista",
+ *                  "bairro": "Bela Vista",
+ *                  "cidade": "São Paulo",
+ *                  "estado": "SP"
  *              }
  *          },
  *          "message": "MESSAGE_USER_UPDATE_SUCCESS"

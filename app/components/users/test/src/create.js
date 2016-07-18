@@ -12,12 +12,7 @@ function UnitTest(Repository) {
                 name: 'Felipe Barros',
                 email: 'felipe.barros.pt@gmail.com',
                 password: 'foobar',
-                address:  {
-                    number: 1,
-                    country: 'BR',
-                    state: 'PI',
-                    city: 'Teresina'
-                }
+                address:  '01311300'
             };
         });
 

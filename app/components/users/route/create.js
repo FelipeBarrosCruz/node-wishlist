@@ -11,12 +11,7 @@
  *       "name":     "Felipe Barros"
  *       "email":    "felipe.barros.pt@gmail.com",
  *       "password": "foobar",
- *       "address": {
- *          "number": 1,
- *          "country": "BR",
- *          "state": "PI",
- *          "city": "Teresina"
- *       }
+ *       "address":  01311300
  *     }
  *
  * @apiErrorExample {json} Error-Response:
@@ -35,10 +30,12 @@
  *              "name":  "Felipe Barros",
  *              "email": "felipe.barros.pt@gmail.com"
  *              "address": {
- *                  "number": 1,
- *                  "country": "BR",
- *                  "state": "PI",
- *                  "city": "Teresina"
+ *                  "cep": "01311300",
+ *                  "tipoDeLogradouro": "Avenida",
+ *                  "logradouro": "Paulista",
+ *                  "bairro": "Bela Vista",
+ *                  "cidade": "São Paulo",
+ *                  "estado": "SP"
  *              }
  *          },
  *          "token": "JsonWebToken",

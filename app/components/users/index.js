@@ -14,7 +14,7 @@ function getRouter(Application, Repository) {
 
     Router.get(
         '/',
-        requireRoute('select')
+        requireRoute('select', false)
     );
 
     Router.post(
@@ -39,10 +39,15 @@ function getEntity(Application, Repository) {
     return require('./entity')(Application, Repository);
 }
 
+function getHelper(Application, Repository) {
+    return false;
+}
+
 function Component(Application, Repository) {
     return {
         router: getRouter(Application, Repository),
-        entity: getEntity(Application, Repository)
+        entity: getEntity(Application, Repository),
+        helper: getHelper(Application, Repository)
     };
 };
 

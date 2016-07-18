@@ -13,7 +13,7 @@
  *     }
  *
  * @apiSuccessExample {json} Success-Response:
- *     HTTP/1.1 202 OK
+ *     HTTP/1.1 200 OK
  *     {
  *          "status": true,
  *          "data": {
@@ -33,6 +33,7 @@
 let Route = (Repository) => {
 
     return (req, res, next) => {
+
         let UserEntity = Repository.get('app.entity.users');
 
         let Data = {

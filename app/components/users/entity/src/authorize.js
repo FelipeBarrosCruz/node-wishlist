@@ -1,6 +1,6 @@
 'use strict';
 
-function ModelAction(Application, Model) {
+function ModelAction(Repository, Model) {
 
     function ValidateWhere(data) {
         if (!/[A-Za-z._\-0-9]+@[A-Za-z._\-0-9]+\.[A-Za-z]{2,4}/.test(data.email)) {

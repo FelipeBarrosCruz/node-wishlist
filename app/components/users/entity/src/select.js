@@ -1,6 +1,6 @@
 'use strict';
 
-function ModelAction(Application, Model) {
+function ModelAction(Repository, Model) {
 
     return (data, cb) => {
         Model
