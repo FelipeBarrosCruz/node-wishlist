@@ -22,6 +22,17 @@ describe('Set up the application', function () {
         });
     });
 
+    describe('Set up tests of Locations component', function () {
+        it('Running locations tests', function () {
+            try {
+                return loaderTestComponent('locations', this.repository);
+            } catch(err) {
+                (err === null).should.equal(true);
+            }
+        });
+    });
+
+
     describe('Set up tests of Auth component', function () {
         it('Running Auth tests', function () {
             try {
