@@ -1,7 +1,23 @@
 'use strict';
 
 function getRouter(Application, Repository) {
-   return false;
+    let Router = require('express').Router();
+
+    function requireRoute(route, security) {
+        let Route = [
+            require(`./route/${route}`)(Repository)
+        ];
+        return (security === false)
+                ? Route
+                : [Repository.get('security.jwtConfiguration')].concat(Route);
+    }
+
+    Router.get(
+        '/:cep',
+        requireRoute('select', false)
+    );
+
+    return Router;
 };
 
 function getEntity(Application, Repository) {
