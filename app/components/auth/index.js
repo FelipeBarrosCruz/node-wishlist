@@ -18,13 +18,18 @@ function getRouter(Application, Repository) {
 };
 
 function getEntity(Application, Repository) {
-    return null;
+    return false;
+}
+
+function getHelper(Application, Repository) {
+    return false;
 }
 
 function Component(Application, Repository) {
     return {
         router: getRouter(Application, Repository),
-        entity: getEntity(Application, Repository)
+        entity: getEntity(Application, Repository),
+        helper: getHelper(Application, Repository)
     };
 };
 
