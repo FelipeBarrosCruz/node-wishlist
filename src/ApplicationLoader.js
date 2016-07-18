@@ -19,6 +19,10 @@ function ApplicationLoader(data, doNext) {
         Repository.set(`app.entity.${name}`, entity);
     }
 
+    function loadHelper(name, helper) {
+        Repository.set(`app.helper.${name}`, helper);
+    }
+
     let ComponentsDirectory = data.configuration.application.dir;
     let Components = require(ComponentsDirectory);
 
@@ -31,6 +35,10 @@ function ApplicationLoader(data, doNext) {
 
         if (Component.entity) {
             loadEntity(name, Component.entity);
+        }
+
+        if (Component.helper) {
+            loadHelper(name, Component.helper)
         }
     }
 
