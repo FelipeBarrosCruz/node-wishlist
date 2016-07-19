@@ -9,12 +9,12 @@ function ApplicationServer(configuration) {
         Morgan                = require('morgan'),
         Helmet                = require('helmet'),
         Async                 = require('async'),
-        JwtAuth               = require('jsonwebtoken'),
+        JwtSignIn             = require('jsonwebtoken'),
+        JwtSignOut            = require('express-jwt-blacklist'),
         Waterline             = require('waterline'),
         WaterlinePostgres     = require('sails-postgresql'),
         ApplicationLoader     = require('./ApplicationLoader'),
         ApplicationRepository = require('./ApplicationRepository');
-
 
     /*
      * @Description: Configure Waterline Database ORM
@@ -67,6 +67,7 @@ function ApplicationServer(configuration) {
     */
     let JwtConfiguration = ExpressJwt({
         secret: configuration.jwt.secret,
+        isRevoked: JwtSignOut.isRevoked,
         getToken: (req) => {
             return req.headers.bearer || null;
         }
@@ -77,10 +78,17 @@ function ApplicationServer(configuration) {
      * @Description: Set JwtSign function to generate token
      * @Reference: https://github.com/auth0/node-jsonwebtoken
     */
-    let JwtSign = (user) => {
-        return JwtAuth.sign(user, configuration.jwt.secret);
-    }
-    ApplicationRepository.set('security.jwtSign', JwtSign);
+    ApplicationRepository.set('security.jwtSignIn', (user) => {
+        return JwtSignIn.sign(user, configuration.jwt.secret);
+    });
+
+    /*
+     * @Description: Set JwtSign function to generate token
+     * @Reference: https://github.com/auth0/node-jsonwebtoken
+    */
+    ApplicationRepository.set('security.jwtSignOut', (user) => {
+        return JwtSignOut.revoke(user);
+    });
 
     /*
      * @Description: Generate errors midlewares;
