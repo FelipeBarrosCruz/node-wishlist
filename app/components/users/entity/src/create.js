@@ -10,6 +10,10 @@ function ModelAction(Repository, Model) {
         });
     }
 
+    function encryptPassword(password) {
+        return require('sha1')(password);
+    }
+
     return (data, cb) => {
 
         let SearchByCepPromise = new Promise((resolve, reject) => {
@@ -22,7 +26,9 @@ function ModelAction(Repository, Model) {
         });
 
         SearchByCepPromise.then((result) => {
-            data.address = result;
+            data.address  = result;
+            data.password = encryptPassword(data.password);
+
             Model
             .get()
             .create(data)

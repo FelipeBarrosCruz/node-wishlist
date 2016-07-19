@@ -22,6 +22,7 @@ function Schema(Application, Repository) {
             },
             email: {
                 type: 'string',
+                email: true,
                 required: true
             },
             password: {
@@ -31,6 +32,10 @@ function Schema(Application, Repository) {
             address: {
                 type: 'json',
                 required: true
+            },
+            wishes: {
+                collection: 'wishes',
+                via:        'userId'
             }
         }
     });

@@ -48,7 +48,7 @@ let Route = (Repository) => {
 
     return (req, res, next) => {
         let UserEntity = Repository.get('app.entity.users'),
-            JwtSign     = Repository.get('security.jwtSign');
+            JwtSignIn  = Repository.get('security.jwtSignIn');
 
         let Data = {
             name:       req.body.name,
@@ -58,7 +58,6 @@ let Route = (Repository) => {
 
         UserEntity.src.create(Data, (err, status, result) => {
             if (err || !status) {
-                console.log(err);
                 return res.status(400).json({
                     status: status,
                     message: 'MESSAGE_USER_CREATE_ERROR'
@@ -70,7 +69,7 @@ let Route = (Repository) => {
             return res.status(201).json({
                 status: status,
                 data:   result,
-                token:  JwtSign({
+                token:  JwtSignIn({
                     id: user.id
                 }),
                 message: 'MESSAGE_USER_CREATE_SUCCESS'
