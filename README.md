@@ -8,7 +8,7 @@
     npm install
 
 ### To run tests
-    npm run tests
+    npm install --dev && npm run test
 
 ### To run develoment mode
     npm run development
