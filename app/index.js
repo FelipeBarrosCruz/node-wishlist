@@ -7,6 +7,7 @@ function requireComponent(component) {
 const COMPONENTS = [
     'auth',
     'locations',
+    'wishes',
     'users'
 ];
 
