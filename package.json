@@ -7,7 +7,10 @@
     "node": ">=5.0.0"
   },
   "scripts": {
-    "start": "node index.js",
+    "start": "pm2 start index.js --name=\"API\" --instances=\"2\" --watch",
+    "stop:all": "pm2 stop all",
+    "start:all": "pm2 start all",
+    "restart": "npm run stop:all && npm run start:all",
     "test": "./node_modules/.bin/mocha tests --timeout 60000 --reporter spec",
     "development": "./node_modules/.bin/pm2-dev index.js",
     "documentation": "./node_modules/.bin/apidoc -i ./app"
