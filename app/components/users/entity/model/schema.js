@@ -7,6 +7,7 @@ function Schema(Application, Repository) {
     return Waterline.Collection.extend({
         identity: 'users',
         connection: 'default',
+        migrate:    'safe',
         autoCreatedAt: true,
         autoUpdatedAt: true,
         attributes: {
