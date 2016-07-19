@@ -11,7 +11,12 @@ function getRouter(Application, Repository) {
 
     Router.post(
         '/',
-        requireRoute('authorize')
+        requireRoute('create')
+    );
+
+    Router.delete(
+        '/',
+        requireRoute('delete')
     );
 
     return Router;

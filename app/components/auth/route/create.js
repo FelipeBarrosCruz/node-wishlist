@@ -4,7 +4,7 @@ let Route = (Repository) => {
 
     return (req, res, next) => {
         let UserEntity  = Repository.get('app.entity.users'),
-            JwtSign     = Repository.get('security.jwtSign');
+            JwtSignIn   = Repository.get('security.jwtSignIn');
 
         let Data = {
             where: {
@@ -26,7 +26,7 @@ let Route = (Repository) => {
             return res.status(200).json({
                 status: status,
                 data:   user,
-                token:  JwtSign({
+                token:  JwtSignIn({
                     id: user.id
                 })
             });
