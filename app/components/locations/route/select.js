@@ -1,15 +1,17 @@
 'use strict';
 /**
- * @api {get} /users SELECT
- * @apiDescription Select an user
+ * @api {get} /locations/:cep SELECT
+ * @apiDescription Search a location by cep
  * @apiName SELECT
- * @apiGroup Users
+ * @apiGroup Locations
+ *
+ * @apiParam {Integer} cep Cep for search.
  *
  * @apiErrorExample {json} Error-Response:
  *     HTTP/1.1 400 Bad Request
  *     {
  *       "status": false,
- *       "message": "MESSAGE_USER_NOT_FOUND"
+ *       "message": "MESSAGE_LOCATION_NOT_FOUND"
  *     }
  *
  * @apiSuccessExample {json} Success-Response:
@@ -17,14 +19,14 @@
  *     {
  *          "status": true,
  *          "data": {
- *              "id": 1,
- *              "name":  "Felipe Barros",
- *              "email": "felipe.barros.pt@gmail.com",
- *              "address": {
- *                  "number": 1,
- *                  "country": "BR",
- *                  "state": "PI",
- *                  "city": "Teresina"
+ *              "status": true,
+ *              "data": {
+ *                  "cep": "01311300",
+ *                  "tipoDeLogradouro": "Avenida",
+ *                  "logradouro": "Paulista",
+ *                  "bairro": "Bela Vista",
+ *                  "cidade": "São Paulo",
+ *                  "estado": "SP"
  *              }
  *          }
  *     }

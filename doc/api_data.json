@@ -1,5 +1,47 @@
 [
   {
+    "type": "get",
+    "url": "/locations/:cep",
+    "title": "SELECT",
+    "description": "<p>Search a location by cep</p>",
+    "name": "SELECT",
+    "group": "Locations",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "cep",
+            "description": "<p>Cep for search.</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 400 Bad Request\n{\n  \"status\": false,\n  \"message\": \"MESSAGE_LOCATION_NOT_FOUND\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n     \"status\": true,\n     \"data\": {\n         \"status\": true,\n         \"data\": {\n             \"cep\": \"01311300\",\n             \"tipoDeLogradouro\": \"Avenida\",\n             \"logradouro\": \"Paulista\",\n             \"bairro\": \"Bela Vista\",\n             \"cidade\": \"São Paulo\",\n             \"estado\": \"SP\"\n         }\n     }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "app/components/locations/route/select.js",
+    "groupTitle": "Locations"
+  },
+  {
     "type": "post",
     "url": "/users",
     "title": "CREATE",
