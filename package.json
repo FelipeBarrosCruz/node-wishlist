@@ -42,6 +42,7 @@
     "cors": "^2.7.1",
     "express": "^4.14.0",
     "express-jwt": "^3.4.0",
+    "express-jwt-blacklist": "^1.1.0",
     "helmet": "^2.1.1",
     "jsonwebtoken": "^7.1.6",
     "moment": "^2.14.1",
@@ -49,6 +50,7 @@
     "morgan": "^1.7.0",
     "request": "^2.73.0",
     "sails-postgresql": "^0.11.4",
+    "sha1": "^1.1.1",
     "waterline": "^0.12.2"
   }
 }
