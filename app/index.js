@@ -5,8 +5,10 @@ function requireComponent(component) {
 };
 
 const COMPONENTS = [
-    'users',
-    'wishlist'
+    'auth',
+    'locations',
+    'wishes',
+    'users'
 ];
 
 let response = {}

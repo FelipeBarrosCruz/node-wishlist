@@ -12,26 +12,6 @@ function getRouter(Application, Repository) {
                 : [Repository.get('security.jwtConfiguration')].concat(Route);
     }
 
-    Router.get(
-        '/',
-        requireRoute('select', false)
-    );
-
-    Router.post(
-        '/',
-        requireRoute('create', false)
-    );
-
-    Router.put(
-        '/',
-        requireRoute('update')
-    );
-
-    Router.delete(
-        '/',
-        requireRoute('delete')
-    );
-
     return Router;
 };
 

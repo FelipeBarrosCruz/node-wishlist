@@ -3,8 +3,14 @@
   "version": "1.0.0",
   "description": "Node Wishlist",
   "main": "index.js",
+  "engines": {
+    "node": ">=5.0.0"
+  },
   "scripts": {
-    "test": "mocha --reporter spec"
+    "start": "node index.js",
+    "test": "./node_modules/.bin/mocha tests --timeout 60000 --reporter spec",
+    "development": "./node_modules/.bin/pm2-dev index.js",
+    "documentation": "./node_modules/.bin/apidoc -i ./app"
   },
   "repository": {
     "type": "git",
@@ -23,17 +29,28 @@
   },
   "homepage": "https://github.com/FelipeBarrosCruz/node-wishlist#readme",
   "devDependencies": {
+    "apidoc": "^0.16.1",
     "chai": "^3.5.0",
-    "mocha": "^2.5.3"
+    "mocha": "^2.5.3",
+    "pm2": "^1.1.3"
   },
   "dependencies": {
+    "async": "^2.0.0",
+    "axios": "^0.13.1",
     "body-parser": "^1.15.2",
+    "colors": "^1.1.2",
+    "cors": "^2.7.1",
     "express": "^4.14.0",
     "express-jwt": "^3.4.0",
+    "express-jwt-blacklist": "^1.1.0",
     "helmet": "^2.1.1",
     "jsonwebtoken": "^7.1.6",
     "moment": "^2.14.1",
     "moment-timezone": "^0.5.4",
-    "morgan": "^1.7.0"
+    "morgan": "^1.7.0",
+    "request": "^2.73.0",
+    "sails-postgresql": "^0.11.4",
+    "sha1": "^1.1.1",
+    "waterline": "^0.12.2"
   }
 }

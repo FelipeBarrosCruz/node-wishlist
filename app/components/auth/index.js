@@ -3,28 +3,15 @@
 function getRouter(Application, Repository) {
     let Router = require('express').Router();
 
-    function requireRoute(route, security) {
-        let Route = [
+    function requireRoute(route) {
+        return [
             require(`./route/${route}`)(Repository)
         ];
-        return (security === false)
-                ? Route
-                : [Repository.get('security.jwtConfiguration')].concat(Route);
     }
-
-    Router.get(
-        '/',
-        requireRoute('select', false)
-    );
 
     Router.post(
         '/',
-        requireRoute('create', false)
-    );
-
-    Router.put(
-        '/',
-        requireRoute('update')
+        requireRoute('create')
     );
 
     Router.delete(
@@ -36,7 +23,7 @@ function getRouter(Application, Repository) {
 };
 
 function getEntity(Application, Repository) {
-    return require('./entity')(Application, Repository);
+    return false;
 }
 
 function getHelper(Application, Repository) {

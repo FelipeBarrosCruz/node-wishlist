@@ -13,34 +13,19 @@ function getRouter(Application, Repository) {
     }
 
     Router.get(
-        '/',
+        '/:cep',
         requireRoute('select', false)
-    );
-
-    Router.post(
-        '/',
-        requireRoute('create', false)
-    );
-
-    Router.put(
-        '/',
-        requireRoute('update')
-    );
-
-    Router.delete(
-        '/',
-        requireRoute('delete')
     );
 
     return Router;
 };
 
 function getEntity(Application, Repository) {
-    return require('./entity')(Application, Repository);
+    return false;
 }
 
 function getHelper(Application, Repository) {
-    return false;
+    return require('./helper')(Application, Repository);
 }
 
 function Component(Application, Repository) {
